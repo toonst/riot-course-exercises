@@ -40,7 +40,7 @@ $ make all term
 help
 Command              Description
 ---------------------------------------
-> 
+>
 ```
 
 Your application runs on native with an empty shell: no commands are available.
@@ -96,13 +96,9 @@ handler prints a usage message if an invalid list of argument is given.
 5. Build and run tha application. Verify that the new handler works as
 expected.
 
-6. Now re-build the same application for the `b-l072z-lrwan1` board and run it
-<br><br>_**Remember:**_ if you use a node on IoT-LAB, you need to also
-pass to the `make` command the `IOTLAB_NODE` variable with the correct node
-assigned to it.<br>
-__Example:__ `IOTLAB_NODE=st-lrwan1-10.saclay.iot-lab.info`.
+6. Now re-build the same application for the `olimex-stm32-p405` board and run it
 ```sh
-$ make BOARD=b-l072z-lrwan1 flash term
+$ make BOARD=olimex-stm32-p405 flash term
 ```
 
 It works exactly the same on hardware without modifications :)

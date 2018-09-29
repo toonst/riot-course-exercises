@@ -8,7 +8,7 @@ temperature and relative humidity values from a
 
 This sensor is available on the
 [ST X-NUCLEO-IKS01A2 shield](https://www.st.com/en/ecosystems/x-nucleo-iks01a2.html)
-plugged on the [B-L072Z-LRWAN1](https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html)
+plugged on the [STM32-P405](https://www.st.com/en/evaluation-tools/olimex-stm32-p405.html)
 board.
 
 This exercise can only be run on hardware.
@@ -68,7 +68,7 @@ shell.
 You can start from the led application previously written in
 `~/riot-course/exercises/getting-started/led`
 
-7. Build and run the application for the B-L072Z-LRWAN1 board
+7. Build and run the application for the STM32-P405 board
 
 <br><br>_**Remember:**_ if you use a node on IoT-LAB, you need to also
 pass to the `make` command the `IOTLAB_NODE` variable with the correct node
@@ -76,5 +76,5 @@ assigned to it.<br>
 __Example:__ `IOTLAB_NODE=st-lrwan1-10.saclay.iot-lab.info`.
 
 ```sh
-$ make BOARD=b-l072z-lrwan1 flash term
+$ make BOARD=olimex-stm32-p405 flash term
 ```

@@ -1,6 +1,6 @@
 APPLICATION=rtc-application
 
-BOARD ?= b-l072z-lrwan1
+BOARD ?= olimex-stm32-p405
 
 USEMODULE += xtimer
 

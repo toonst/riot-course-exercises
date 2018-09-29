@@ -43,25 +43,25 @@ structure of the application.
 ### Build and run the application on a specific hardware
 
 In this section, you will build the same application but this time for the
-[ST B-L072Z-LRWAN1](https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html)
+[Olimex STM32-P404](https://www.olimex.com/Products/ARM/ST/STM32-P405/)
 target board.
 
-The codename of this board in RIOT is **b-l072z-lrwan1**.
+The codename of this board in RIOT is **olimex-stm32-p405**.
 
 1. Use `BOARD` variable to select this target at build time.
 
 ```sh
-$ make BOARD=b-l072z-lrwan1
-Building application "first-app" for "b-l072z-lrwan1" with MCU "stm32l0".
+$ make BOARD=olimex-stm32-p405
+Building application "first-app" for "olimex-stm32-p405" with MCU "stm32f4".
 
-"make" -C /home/user/RIOT/boards/b-l072z-lrwan1
+"make" -C /home/user/RIOT/boards/olimex-stm32-p405
 "make" -C /home/user/RIOT/core
-"make" -C /home/user/RIOT/cpu/stm32l0
+"make" -C /home/user/RIOT/cpu/stm32f4
 "make" -C /home/user/RIOT/cpu/cortexm_common
 "make" -C /home/user/RIOT/cpu/cortexm_common/periph
 "make" -C /home/user/RIOT/cpu/stm32_common
 "make" -C /home/user/RIOT/cpu/stm32_common/periph
-"make" -C /home/user/RIOT/cpu/stm32l0/periph
+"make" -C /home/user/RIOT/cpu/stm32f4/periph
 "make" -C /home/user/RIOT/drivers
 "make" -C /home/user/RIOT/drivers/periph_common
 "make" -C /home/user/RIOT/sys
@@ -72,39 +72,31 @@ Building application "first-app" for "b-l072z-lrwan1" with MCU "stm32l0".
 "make" -C /home/user/RIOT/sys/tsrb
 "make" -C /home/user/RIOT/sys/uart_stdio
  text   data    bss    dec    hex filename
- 7596    140   2740  10476   28ec .../getting-started/first-app/bin/b-l072z-lrwan1/first-app.elf
+ 7596    140   2740  10476   28ec .../getting-started/first-app/bin/olimex-stm32-p405/first-app.elf
 ```
 
 2. Check the type of the generated file. It's a binary application compiled for
   the ARM architecture
 
 3. Run the application on hardware.
-  <br><br>_**Important note:**_ if you use a node on IoT-LAB, you need to also
-  pass to the `make` command the `IOTLAB_NODE` variable with the correct node
-  assigned to it.<br>
-  __Example:__ `IOTLAB_NODE=st-lrwan1-10.saclay.iot-lab.info`.
-
   - Use **term** target to open a serial terminal on the board:
   ```sh
-  $ make BOARD=b-l072z-lrwan1 term
+  $ make BOARD=olimex-stm32-p405 term
   ```
-  **term** opens a serial terminal on the board (using pyterm by default). In the
-  case of IoT-LAB, it opens a SSH tunnel to IoT-LAB and redirects the serial port
-  from there.
+  **term** opens a serial terminal on the board (using pyterm by default).
   <br>**Keep the serial terminal open.**
   - **In another terminal window**, use the **flash** target to program the
   board:
   ```
-  $ make BOARD=b-l072z-lrwan1 flash
+  $ make BOARD=olimex-stm32-p405 flash
   ```
   Now take a look at the message displayed by the RIOT application in the first
   serial terminal.
 
-**flash** calls the flasher tool automatically (OpenOCD or iotlab-node in the
-case of IoT-LAB)
+**flash** calls the flasher tool automatically (OpenOCD in our case)
 
 ```sh
-$ make BOARD=b-l072z-lrwan1 flash term
+$ make BOARD=olimex-stm32-p405 flash term
 [...]
 ### Flashing Target ###
 Open On-Chip Debugger 0.10.0+dev-00290-g5a98ff78 (2018-01-31-14:50)

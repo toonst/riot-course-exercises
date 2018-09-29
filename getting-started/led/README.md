@@ -8,7 +8,7 @@ RIOT defines macros for interacting with LEDs &#x21d2; **LEDi_ON**,
 
 These macros are defined in the **board.h** file of each board that provides
 LEDs. This is because LEDs or buttons are specific to a board.
-See `~/riot-course/RIOT/boards/b-l072z-lrwan1/include/board.h` for example.
+See `~/riot-course/RIOT/boards/olimex-stm32-p405/include/board.h` for example.
 
 In this exercise, we propose to write a shell command that toggles a LED given
 its number:
@@ -32,20 +32,14 @@ Toggle led 1
    `board.h` also needs to be included.
 
    _note:_ ensure that LEDs number given doesn't exceeds the number of
-   available LEDs (*clue:* the B-L072Z-LRWAN1 has 4 LEDs, native 2).
+   available LEDs (*clue:* the STM32-p405 has 1 LED, native 2).
 
 3. Build and run the application for `native` target:
 ```sh
 $ make all term
 ```
 
-3. Build and run the application for the B-L072Z-LRWAN1 board
-
-<br><br>_**Remember:**_ if you use a node on IoT-LAB, you need to also
-pass to the `make` command the `IOTLAB_NODE` variable with the correct node
-assigned to it.<br>
-__Example:__ `IOTLAB_NODE=st-lrwan1-10.saclay.iot-lab.info`.
-
+3. Build and run the application for the Olimex STM32-P405 board
 ```sh
-$ make BOARD=b-l072z-lrwan1 flash term
+$ make BOARD=olimex-stm32-p405 flash term
 ```
